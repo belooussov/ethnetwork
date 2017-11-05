@@ -1,4 +1,4 @@
-FROM ethereum/client-go:alpine
+FROM ethereum/client-go:v1.5.4
 MAINTAINER Maxim B. Belooussov <belooussov@gmail.com> Toon Leijtens <toon.leijtens@gmail.com>
 
 ENV DATA_DIR /root/.ethereum
@@ -33,12 +33,12 @@ RUN /geth --networkid $NETWORKID init $DATA_DIR/genesis.json && \
     apk add g++ && \
     apk add make && \
     apk add git && \
-    git clone https://github.com/ing-bank/eth-netstats &&\
+    git clone https://github.com/cubedro/eth-netstats && \
     cd /eth-netstats && npm install &&\
     cd /eth-netstats && npm install -g grunt-cli &&\
     cd /eth-netstats && grunt && \
     cd &&\
-    git clone https://github.com/ing-bank/eth-net-intelligence-api.git /eth-net-intelligence-api
+    git clone https://github.com/cubedro/eth-net-intelligence-api.git /eth-net-intelligence-api
 
 COPY artifacts/app.json /eth-net-intelligence-api
 

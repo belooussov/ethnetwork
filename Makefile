@@ -1,4 +1,4 @@
-AUTHOR=banking
+AUTHOR=belooussov
 NAME=ethnetwork
 NETWORKID=42
 NETWORKPORT=30303
